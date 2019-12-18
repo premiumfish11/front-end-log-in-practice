@@ -35,11 +35,7 @@ xhr.send();
   xhr.onload = function() {
     var text = xhr.responseText;
     var data = JSON.parse(text);
-    data.forEach(x=>console.log(x.id));
-
-    console.log(input);
-    console.log(data.includes(input));
-    if (data.includes({id:nameInput.value,pw:emailInput.value})) {
+    if (data.filter(e => e.id === input.id && e.pw === input.pw).length > 0) {
         window.location.replace("https://boss-note-app.herokuapp.com");
     }
     else {
@@ -48,19 +44,6 @@ xhr.send();
 
   };
    
-
-
-        // Create new list item with user
-        const li = document.createElement('li');
-
-        // Add text node with input values
-        //li.appendChild(document.createTextNode(`${nameInput.value}: ${emailInput.value}`));
-
-        // Add HTML
-        // li.innerHTML = `<strong>${nameInput.value}</strong>e: ${emailInput.value}`;
-
-        // Append to ul
-        //userList.appendChild(li);
 
         // Clear fields
         nameInput.value = '';
