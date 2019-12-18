@@ -36,7 +36,7 @@ xhr.send();
     var text = xhr.responseText;
     var data = JSON.parse(text);
     if (data.filter(e => e.id === input.id && e.pw === input.pw).length > 0) {
-        window.location.replace("https://boss-note-app.herokuapp.com");
+        window.location.replace("https://premiumfish11.com");
     }
     else {
         alert("fail");
